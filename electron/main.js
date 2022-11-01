@@ -19,11 +19,11 @@ function createWindow () {
   // mainWindow.loadFile('dist/index.html') // 此处跟electron官网路径不同，需要注意
   mainWindow.loadURL(
     NODE_ENV === 'development'
-    ? 'http://localhost:3000'
+    ? 'http://localhost:5173'
     :`file://${path.join(__dirname, '../dist/index.html')}`
   );
   // 打开开发工具
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 }
 
 // 这段程序将会在 Electron 结束初始化
@@ -44,6 +44,3 @@ app.whenReady().then(() => {
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
-
-// 在这个文件中，你可以包含应用程序剩余的所有部分的代码，
-// 也可以拆分成几个文件，然后用 require 导入。
