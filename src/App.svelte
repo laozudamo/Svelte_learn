@@ -7,7 +7,7 @@
   import Father from './lib/Father.svelte'
   import Action from './lib/Action.svelte'
   import Hoverable from './lib/Slot.svelte'
-
+  import Compon from './lib/Compon.svelte'
   // const user = {
   //   name: 'jack',
   //   age: 18,
@@ -17,6 +17,13 @@
   let i = 3
   let pro = '222'
   console.log(pro)
+
+  function getVal(v) {
+    console.log(v.detail)
+    console.log(v)
+  }
+
+  import UseStore from './lib/useStore.svelte'
 </script>
 
 <main>
@@ -40,27 +47,26 @@
 
   <!-- 测试向插槽传入参数 -->
 
-  <Hoverable let:hovering={active}>
-    <div class:active>
-      console.log(active)
-      <!-- {#if active}
-        <p>I am being hovered upon.</p>
-      {:else}
-        <p>Hover over me!</p>
-      {/if} -->
-    </div>
+  <!-- <Hoverable let:hovering={active}>
+    <div class:active>console.log(active)</div>
   </Hoverable>
+
+  <Compon on:passTheVal={getVal}></Compon> -->
+
+
+  <!-- store的使用 -->
+  <UseStore></UseStore>
 </main>
 
 <style>
-	div {
-		padding: 1em;
-		margin: 0 0 1em 0;
-		background-color: #eee;
-	}
+  div {
+    padding: 1em;
+    margin: 0 0 1em 0;
+    background-color: #eee;
+  }
 
-	.active {
-		background-color: #ff3e00;
-		color: white;
-	}
+  .active {
+    background-color: #ff3e00;
+    color: white;
+  }
 </style>
