@@ -1,0 +1,16 @@
+directories:
+  output: dist_electron
+  buildResources: assets
+appId: com.your-website.your-app
+productName: ElectronApp
+copyright: Copyright © 2021 <your-name>
+mac:
+  category: public.app-category.utilities
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+files:
+  - filter:
+      - dist/**/*
+      - electron/**/*
+electronVersion: 21.2.0
