@@ -24,6 +24,7 @@
   }
 
   import UseStore from './lib/useStore.svelte'
+  import Hahah from './lib/hahah.svelte'
 </script>
 
 <main>
@@ -55,7 +56,8 @@
 
 
   <!-- store的使用 -->
-  <UseStore></UseStore>
+  <!-- <UseStore></UseStore> -->
+  <Hahah title="new title"></Hahah>
 </main>
 
 <style>
